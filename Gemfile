@@ -37,3 +37,4 @@ end
 gem 'gmaps4rails'
 gem 'pg'
 gem 'execjs'
+gem 'therubyracer'
