@@ -35,3 +35,4 @@ group :test do
   gem 'turn', :require => false
 end
 gem 'gmaps4rails'
+gem 'pg'
