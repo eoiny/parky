@@ -36,3 +36,4 @@ group :test do
 end
 gem 'gmaps4rails'
 gem 'pg'
+gem 'execjs'

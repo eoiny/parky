@@ -114,6 +114,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.1.1)
+  execjs
   gmaps4rails
   jquery-rails
   pg
