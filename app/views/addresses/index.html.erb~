@@ -19,19 +19,13 @@
     <td><%= address.city %></td>
     <td><%= address.county %></td>
     <td><%= address.country %></td>
-<% if current_user %> 
-
     <td><%= link_to 'Show', address %></td>
     <td><%= link_to 'Edit', edit_address_path(address) %></td>
     <td><%= link_to 'Destroy', address, confirm: 'Are you sure?', method: :delete %></td>
-<% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
-<% if current_user %> 
 
 <%= link_to 'New Address', new_address_path %>
-<% end %>
-

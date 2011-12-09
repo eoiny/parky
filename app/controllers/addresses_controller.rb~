@@ -2,7 +2,7 @@ class AddressesController < ApplicationController
   # GET /addresses
   # GET /addresses.json
   def index
-    @addresses = Address.all
+    @addresses = current_user.addresses
 
     respond_to do |format|
       format.html # index.html.erb
@@ -11,7 +11,11 @@ class AddressesController < ApplicationController
   end
   
   def map
-   @json = User.all.to_gmaps4rails
+   if current_user 
+   @json = current_user.addresses.to_gmaps4rails
+   else
+       @json = Address.all.to_gmaps4rails
+  end
   end
 
 
@@ -46,7 +50,7 @@ class AddressesController < ApplicationController
   # POST /addresses.json
   def create
     @address = Address.new(params[:address])
-
+    @address.user = current_user 
     respond_to do |format|
       if @address.save
         format.html { redirect_to @address, notice: 'Address was successfully created.' }

@@ -1,0 +1,10 @@
+welcome to Parky!
+
+where do you want to park?
+
+<%= form_tag("/map") do %>
+
+<%=text_field_tag :address %>
+<%=submit_tag "go" %>
+<%end%>
+

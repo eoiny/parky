@@ -31,7 +31,10 @@ ActiveRecord::Schema.define(:version => 20111122195430) do
     t.string   "lastname"
     t.string   "email"
     t.string   "phone"
-    t.string   "password"
+    t.string   "username"
+    t.string   "crypted_password"
+    t.string   "password_salt"
+    t.string   "persistence_token"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,9 +1,19 @@
 Parky::Application.routes.draw do
-  resources :addresses
+ 
+ root :to => "site#index", :as => :home
 
-  resources :users
+ resources :addresses
 
-  match 'map' => "addresses#map"
+  resources :users, :user_sessions
+
+  match 'login' => 'user_sessions#new', :as => :login
+  match 'logout' => 'user_sessions#destroy', :as => :logout
+
+
+  match 'map' => "addresses#map", :as => :map
+
+  match 'userdetails/:id' => 'users#showdetail', :as => :user_details
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
